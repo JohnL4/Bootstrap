@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Bootstrap Container</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style type="text/css">
+      .container, .container-fluid { border: 1px solid red; }
+      .col-sm-4, .col-sm-8, .col-xs-4, .col-xs-8 {border: 1px solid green; }
+    </style>
+    
+  </head>
+  <body>
+
+    <div class="container">
+    Container here.
+    </div>
+
+    <div class="container-fluid">
+    Container-fluid here.
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+          1: col-sm-4 cell
+        </div>
+        <div class="col-sm-4">
+          2: col-sm-4 cell
+        </div>
+        <div class="col-sm-4">
+          3: col-sm-4 cell
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-4">
+          1: col-sm-4 cell
+        </div>
+        <div class="col-sm-4">
+          2: col-sm-4 cell
+        </div>
+        <div class="col-sm-4">
+          3: col-sm-4 cell
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+          I think I like "container" better than "container-fluid".
+        </div>
+        <div class="col-sm-8">
+          This is longer text for this column.
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-4">
+          1: col-xs-4 cell
+        </div>
+        <div class="col-xs-4">
+          2: col-xs-4 cell
+        </div>
+        <div class="col-xs-4">
+          3: col-xs-4 cell
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-4">
+          I think I like "container" better than "container-fluid".
+        </div>
+        <div class="col-xs-8">
+          This is longer text for this column.
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <p>(This might be a little too much, or it might be a mistake to put
+        attributes on P tags.)</p>
+
+    <p><strong>Time for a declaration:</strong></p>
+
+    <p>
+      When in the course of human events, it becomes necessary for one people
+      to dissolve the political bands which have connected them with another,
+      and to assume among the powers of the earth, the separate and equal
+      station to which the Laws of Nature and of Nature's God entitle them, a
+      decent respect to the opinions of mankind requires that they should
+      declare the causes which impel them to the separation.
+    </p>
+
+    <p class="pull-left">
+      This seems to be the first paragraph, according to Wikipedia? Surely
+      not.
+    </p>
+
+    <p class="pull-right">
+      Well, the following paragraphs really do seem to be the
+      entire <em>second</em> paragraph.
+    </p>
+    
+    <p>
+      We hold these truths to be self-evident, that all men are created equal,
+      that they are endowed by their Creator with certain unalienable Rights, that
+      among these are Life, Liberty and the pursuit of Happiness.
+    </p>
+
+    <p>
+      That to secure these rights, Governments are instituted among Men,
+      deriving their just powers from the consent of the governed, That
+      whenever any Form of Government becomes destructive of these ends, it is
+      the Right of the People to alter or abolish it, and to institute new
+      government, laying its foundation on such principles and organizing
+      its powers in such form, as to them shall seem most likely to effect their
+      Safety and Happiness. Prudence, indeed, will dictate that Governments
+      long established should not be changed for light and transient causes; and
+      accordingly all experience hath shewn, that mankind are more disposed to
+      suffer, while evils are sufferable, than to right themselves by
+      abolishing the forms to which they are accustomed. But when a long train
+      of abuses and usurpations, pursuing invariably the same Object evinces a
+      design to reduce them under absolute Despotism, it is the right, it is
+      the duty, to throw off such Government, and to provide new Guards for their
+      future security.
+    </p>
+
+    <p class="pull-right">
+      ...and it goes on.
+    </p>
+
+    </div>
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
