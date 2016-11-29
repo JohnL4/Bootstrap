@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Tabs Experiment</title>
+    
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <script>
+/**
+ * Dump properties of given to log, with intro msg.
+ *
+ * @param msg - Arbitrary text to serve as an intro message
+ * @param obj - The object to be dumped.
+ **/
+function logProps( msg, obj) 
+{
+    console.log( msg + " " + (typeof obj) + " " + obj.toString() + " properties:");
+    for (let k in obj)
+    {
+        if ((typeof obj[k]) == "function") {}
+        else if (obj[k])
+            console.log( "\t" + (typeof obj[k]) + "\t" + k.toString() + ":\t" + obj[k]);
+    }
+}
+    </script>
+      
+  </head>
+  <body>
+
+    <div class="container-fluid">
+
+      <nav>
+        <ul class="nav nav-tabs" id="tabs">
+          <li role="presentation" class="active"><a href="#tab-zero" role="tab" data-toggle="tab">Tab Zero</a></li>
+          <li role="presentation"><a href="#tab-one" role="tab" data-toggle="tab">Tab One and Some Expository Text</a></li>
+          <li role="presentation"><a href="#tab-two" role="tab" data-toggle="tab">Tab Two</a></li>
+          <li role="presentation"><a href="#tab-two" role="tab" data-toggle="tab">Tab Two'</a></li> <!-- ' -->
+          <li role="presentation"><a href="#tab-three" role="tab" data-toggle="tab">Tab Three</a></li>
+        </ul>
+      </nav>
+
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="tab-zero"></div>
+        <div role="tabpanel" class="tab-pane fade" id="tab-one">
+          One
+          <h3>Bootstrap attributes</h3>
+          <dl class="dl-horizontal">
+            <dt><code>role</code></dt>
+            <dd>This is an ARIA attribute with a TON of possible values.  See the W3C spec.</dd>
+            <dt><code>data-toggle</code></dt>
+            <dd>The HTML5 spec allows arbitrary attributes whose names start with <code>data-</code> and continue with
+              any XML-compliant string.  This is the "custom data" attribute, and Bootstrap
+              uses <code>data-toggle</code> in a variety of ways, such as "modal", "tab", "collapse", "dropdown".
+              There isn't really a single place (as far as I know) where all of <code>data-toggle</code> is
+              documented; it's just sort of scattered.</dd>
+          </dl>
+          <h3>Use With Angular 2</h3>
+          <p>
+            I think the thing to do is to have a single content pane for all the tabs and use the router (and
+            router-output) to load different components into the pane.
+          </p>
+        </div>
+        <!-- Does 'fade' make a difference when switching from/to the same tab, in terms of show/hide events? -->
+        <div role="tabpanel" class="tab-pane fade" id="tab-two">Two</div>
+        <div role="tabpanel" class="tab-pane fade" id="tab-three">Three</div>
+      </div>
+      
+    </div>
+
+    <script src="js/jquery-3.1.1.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script>
+$(document).ready( function() {
+
+    $('#tabs a').click( function( evt) {
+        evt.preventDefault();   // Omit for Angular2?
+        $(this).tab('show');
+    });
+
+    $('a[data-toggle="tab"]').on( 'show.bs.tab', function( evt) {
+        logProps( "Event", evt);
+        logProps( "Show event target", evt.target);
+        console.log( "show: old tab: " + evt.relatedTarget.text);
+        console.log( "show: new tab: " + evt.target.text);
+    });
+
+    $('a[data-toggle="tab"]').on( 'hide.bs.tab', function( evt) {
+        console.log( "hide: new tab: " + evt.relatedTarget.text);
+        console.log( "hide: old tab: " + evt.target.text);
+    });
+
+})
+    </script>
+
+  </body>
+</html>
