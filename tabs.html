@@ -36,8 +36,8 @@ function logProps( msg, obj)
 
       <nav>
         <ul class="nav nav-tabs" id="tabs">
-          <li role="presentation" class="active"><a href="#tab-zero" role="tab" data-toggle="tab">Tab Zero</a></li>
-          <li role="presentation"><a href="#tab-one" role="tab" data-toggle="tab">Tab One and Some Expository Text</a></li>
+          <li role="presentation"><a href="#tab-zero" role="tab" data-toggle="tab">Tab Zero</a></li>
+          <li role="presentation" class="active"><a href="#tab-one" role="tab" data-toggle="tab">Tab One and Some Expository Text</a></li>
           <li role="presentation"><a href="#tab-two" role="tab" data-toggle="tab">Tab Two</a></li>
           <li role="presentation"><a href="#tab-two" role="tab" data-toggle="tab">Tab Two'</a></li> <!-- ' -->
           <li role="presentation"><a href="#tab-three" role="tab" data-toggle="tab">Tab Three</a></li>
@@ -45,8 +45,8 @@ function logProps( msg, obj)
       </nav>
 
       <div class="tab-content">
-        <div role="tabpanel" class="tab-pane fade in active" id="tab-zero"></div>
-        <div role="tabpanel" class="tab-pane fade" id="tab-one">
+        <div role="tabpanel" class="tab-pane fade" id="tab-zero"></div>
+        <div role="tabpanel" class="tab-pane fade in active" id="tab-one">
           One
           <h3>Bootstrap attributes</h3>
           <dl class="dl-horizontal">
@@ -58,6 +58,11 @@ function logProps( msg, obj)
               uses <code>data-toggle</code> in a variety of ways, such as "modal", "tab", "collapse", "dropdown".
               There isn't really a single place (as far as I know) where all of <code>data-toggle</code> is
               documented; it's just sort of scattered.</dd>
+            <dt><code>.fade</code>, <code>.in</code></dt>
+            <dd>These classes, on tab content panes, provide "fade" effects on the tabs.  The first tab (the one that
+              should be showing on initial page load) additionally needs the <code>.in</code> class (in addition to
+              the <code>.active</code> class).  I'm guessing that, generally, the <code>.in</code> class specifies
+              initial state for various things in Bootstrap.
           </dl>
           <h3>Use With Angular 2</h3>
           <p>
