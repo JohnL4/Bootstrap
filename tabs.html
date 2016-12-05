@@ -36,8 +36,8 @@ function logProps( msg, obj)
 
       <nav>
         <ul class="nav nav-tabs" id="tabs">
-          <li role="presentation" class="active"><a href="#tab-zero" role="tab" data-toggle="tab">Tab Zero</a></li>
-          <li role="presentation"><a href="#tab-one" role="tab" data-toggle="tab">Tab One and Some Expository Text</a></li>
+          <li role="presentation"><a href="#tab-zero" role="tab" data-toggle="tab">Tab Zero</a></li>
+          <li role="presentation" class="active"><a href="#tab-one" role="tab" data-toggle="tab">Tab One and Some Expository Text</a></li>
           <li role="presentation"><a href="#tab-two" role="tab" data-toggle="tab">Tab Two</a></li>
           <li role="presentation"><a href="#tab-two" role="tab" data-toggle="tab">Tab Two'</a></li> <!-- ' -->
           <li role="presentation"><a href="#tab-three" role="tab" data-toggle="tab">Tab Three</a></li>
@@ -45,8 +45,8 @@ function logProps( msg, obj)
       </nav>
 
       <div class="tab-content">
-        <div role="tabpanel" class="tab-pane fade in active" id="tab-zero"></div>
-        <div role="tabpanel" class="tab-pane fade" id="tab-one">
+        <div role="tabpanel" class="tab-pane fade" id="tab-zero"></div>
+        <div role="tabpanel" class="tab-pane fade in active" id="tab-one">
           One
           <h3>Bootstrap attributes</h3>
           <dl class="dl-horizontal">
@@ -74,28 +74,6 @@ function logProps( msg, obj)
 
     <script src="js/jquery-3.1.1.js"></script>
     <script src="js/bootstrap.js"></script>
-    <script>
-$(document).ready( function() {
-
-    $('#tabs a').click( function( evt) {
-        evt.preventDefault();   // Omit for Angular2?
-        $(this).tab('show');
-    });
-
-    $('a[data-toggle="tab"]').on( 'show.bs.tab', function( evt) {
-        logProps( "Event", evt);
-        logProps( "Show event target", evt.target);
-        console.log( "show: old tab: " + evt.relatedTarget.text);
-        console.log( "show: new tab: " + evt.target.text);
-    });
-
-    $('a[data-toggle="tab"]').on( 'hide.bs.tab', function( evt) {
-        console.log( "hide: new tab: " + evt.relatedTarget.text);
-        console.log( "hide: old tab: " + evt.target.text);
-    });
-
-})
-    </script>
 
   </body>
 </html>
